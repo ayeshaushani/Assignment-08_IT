@@ -1,0 +1,227 @@
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case-02</title>
+</head>
+<style>
+    body{
+        background: #044646;
+        display: flex;
+        flex-direction: row;
+    }
+    section{
+        display: flex;
+        flex-direction: row;
+        border-bottom: 5px solid white;
+        border-top: 5px solid white;
+        margin: 8vh;
+        line-height: 5rem;
+        margin-top: 45vh;
+
+    }
+    /*section>div {
+        width: 100px;
+        aspect-ratio: 1/1;
+        !* background: lightalign-items: center;blue;
+         border: 2px solid darkblue;*!
+        !* border-radius: 8px;*!
+        margin-top: 20vh ;
+        margin-left: 2vw;
+        display: inline-block;
+        justify-content: center;
+        align-items: center;
+
+    }*/
+    div {
+        width: 100px;
+        height: 50px;
+        margin-left: 2vw;
+        margin-top: 10px;
+        border-radius: 10px;
+
+    }
+    div:nth-child(1){
+        background: #fc1b1b;
+    }
+    div:nth-child(2){
+        background: #dede3f;
+    }
+    div:nth-child(3){
+        background: #53c053;
+    }
+    div:nth-child(4){
+        background: #3b3bce;
+    }
+    div:nth-child(5){
+        background: #4e0bb4;
+    }
+    div:nth-child(6){
+        background: #ee651b;
+    }
+    div:nth-child(7){
+        background: #ee1bab;
+    }
+    div:nth-child(8){
+        background: #6db8ea;
+        box-sizing: content-box;
+    }
+
+
+
+</style>
+<body>
+
+<section>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</section>
+
+
+<script>
+    let arr = ["A","B", "C","D","E","F"];
+    setInterval(()=>{
+        let last_value =arr.pop();
+        arr.unshift(last_value);
+        console.log(arr);
+
+        document.getElementsByTagName("h1")[0].innerText = arr[0];
+        document.getElementsByTagName("h1")[1].innerText = arr[1];
+        document.getElementsByTagName("h1")[2].innerText = arr[2];
+        document.getElementsByTagName("h1")[3].innerText = arr[3];
+        document.getElementsByTagName("h1")[4].innerText = arr[4];
+        document.getElementsByTagName("h1")[5].innerText = arr[5];
+    },3000)
+</script>
+
+
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>case02</title>
+    <style>
+        body{
+            background-color: #104f4f;
+        }
+
+        .box{
+            width: 100px;
+            aspect-ratio: 1/0.5;
+            background-color: #d51c1c;
+            display: inline-block;
+            border-radius: 10px;
+
+        }
+
+        .main{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 750px;
+            margin: auto;
+            justify-content: center;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+        }
+        div{
+            display: flex;
+            gap: 5px;
+            width: 100%;
+        }
+        section div:nth-child(2){
+            justify-content: center;
+            margin: 2px 0;
+            border-top: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding: 4px 0;
+        }
+        section div:nth-child(1){
+            justify-content: flex-start;
+            margin-bottom: 4px;
+        }
+        section div:nth-child(3) {
+            justify-content: flex-end;
+            margin-top: 2px;
+        }
+        /*  #red{
+              background-color: red;
+          }
+          #green{
+              background-color: green;
+          }
+          #blue{
+              background-color: blue;
+          }
+          #yellow{
+              background-color: yellow;
+          }
+          #lightpink{
+              background-color: lightpink;
+          }
+          #purple{
+              background-color: plum;
+          }*/
+    </style>
+
+
+</head>
+<body>
+<section class="main">
+    <div><span id="red" class="box"></span></div>
+    <div>
+        <span id="green" class="box"></span>
+        <span id="blue" class="box"></span>
+        <span id="yellow" class="box"></span>
+        <span id="lightpink" class="box"></span>
+    </div>
+    <div><span id="purple" class="box"></span></div>
+</section>
+
+<script src="jquery-3.7.1.min.js"></script>
+
+<script>
+    let color = ["red", "green", "blue", "yellow", "lightpink", "purple"];
+    const boxes=document.querySelectorAll(".box")
+    console.log(boxes)
+
+    setInterval(() => {
+        let last = color.pop();
+        color.unshift(last);
+
+        for (let i = 0; i < boxes.length; i++) {
+            boxes[i].style.backgroundColor=color[i]
+        }
+    },2000)
+    /* setInterval(() => {
+
+         let last = color.pop();
+         color.unshift(last);
+
+         document.getElementById("red").style.backgroundColor = color[0];
+         document.getElementById("green").style.backgroundColor = color[1];
+         document.getElementById("blue").style.backgroundColor = color[2];
+         document.getElementById("yellow").style.backgroundColor = color[3];
+         document.getElementById("lightpink").style.backgroundColor = color[4];
+         document.getElementById("purple").style.backgroundColor = color[5];
+
+         console.log(color)
+
+     },3000);*/
+</script>
+
+</body>
+</html>
